@@ -21,6 +21,11 @@ router.get('/new', (req, res) => {
 });
 
 //Delete
+router.delete('/:id', (req, res) => {
+    Workout.findByIdAndDelete(req.params.id, (err, removedWorkout) => {
+        res.redirect('/workouts');
+    });
+});
 
 //Update
 

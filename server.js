@@ -3,6 +3,7 @@ require('dotenv').config();
 
 //Dependencies 
 const express = require('express');
+const methodOverride = require('method-override');
 
 //Port
 //allow use of Heroku's port or local port, depending on the environment
@@ -49,6 +50,9 @@ app.get('/', (req, res) => {
 
 //bodyparser middleware
 app.use(express.urlencoded({ extended: false }));
+
+//methodoverride middleware
+app.use(methodOverride('_method'));
 
 //mount /workout
 app.use('/workouts', require('./controllers/workout'));
