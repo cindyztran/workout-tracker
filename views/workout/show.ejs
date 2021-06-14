@@ -34,8 +34,9 @@
         </section>
         <section>
             <h2>Actions</h2>
+            <a href="/workouts/<%= workout._id %>/edit"><button class="button">Edit Workout</button></a>
             <form action="/workouts/<%= workout._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE">
+            <input type="submit" value="Delete Workout">
             </form>
         </section>
     </main> 

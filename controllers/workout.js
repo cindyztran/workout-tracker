@@ -27,7 +27,10 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+
 //Update
+
+
 
 //Create
 router.post('/', (req, res) => {
@@ -37,6 +40,15 @@ router.post('/', (req, res) => {
 })
 
 //Edit
+router.get('/:id/edit', (req, res) => {
+    Workout.findById(req.params.id, (err, workout) => {
+        res.render('workout/edit', {
+            workout
+        });
+    });
+});
+
+
 
 //Show
 router.get('/:id', (req, res) => {
