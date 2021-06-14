@@ -46,6 +46,11 @@ app.get('/', (req, res) => {
 });
 
 //Mount Middleware
+
+//bodyparser middleware
+app.use(express.urlencoded({ extended: false }));
+
+//mount /exercisesplit
 app.use('/exercisesplit', require('./controllers/exercisesplit'));
 
 //Tell Express to listen
