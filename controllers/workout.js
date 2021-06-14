@@ -29,7 +29,14 @@ router.delete('/:id', (req, res) => {
 
 
 //Update
-
+router.put('/:id', (req, res) => {
+    Workout.findByIdAndUpdate(
+        req.params.id, 
+        req.body,
+        { new: true}, (err, updatedWorkout) => {
+            res.redirect(`/workouts/${req.params.id}`);
+    });
+});
 
 
 //Create
