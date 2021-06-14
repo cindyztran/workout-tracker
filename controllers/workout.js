@@ -8,8 +8,11 @@ const Workout = require('../models/workout');
 
 //Index
 router.get('/', (req, res) => {
+    Workout.find({}, (err, foundWorkouts) => {
+        res.render('workout/index',
+        { workouts: foundWorkouts });    
+    });
 
-    res.render('workout/index');
 });
 
 //New
@@ -22,6 +25,11 @@ router.get('/new', (req, res) => {
 //Update
 
 //Create
+router.post('/', (req, res) => {
+    Workout.create(req.body, (err, createdWorkout) => {
+        res.redirect('/workouts');
+    });
+})
 
 //Edit
 

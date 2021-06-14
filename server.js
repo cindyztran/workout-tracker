@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 });
 
-//Exercise split index
+//Workout index
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 app.use(express.urlencoded({ extended: false }));
 
 //mount /workout
-app.use('/workout', require('./controllers/workout'));
+app.use('/workouts', require('./controllers/workout'));
 
 //Tell Express to listen
 app.listen(PORT, () => {

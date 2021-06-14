@@ -19,6 +19,19 @@
                 </li>
             </ul>
         </nav>
-    </header>    
+    </header>   
+
+    <main>
+        <h2>List of Workouts</h2>
+        <ul>
+            <% workouts.forEach(workout => { %>
+                
+                <li>
+                    <a href="/workouts/<%= workout._id %>"><%=workout.name%></a>
+                </li>
+            <% }); %>
+            
+        </ul>
+    </main> 
 </body>
 </html>
