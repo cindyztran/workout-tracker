@@ -4,6 +4,7 @@ require('dotenv').config();
 //Dependencies 
 const express = require('express');
 const methodOverride = require('method-override');
+const logger = require('morgan');
 
 //Port
 //allow use of Heroku's port or local port, depending on the environment
@@ -53,6 +54,9 @@ app.use(express.urlencoded({ extended: false }));
 
 //methodoverride middleware
 app.use(methodOverride('_method'));
+
+//server logger middleware
+app.use(logger('dev'));
 
 //mount /workout
 app.use('/workouts', require('./controllers/workout'));
