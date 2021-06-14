@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Tracker | Workouts Index</title>
+    <title>Workout Tracker | See Workout Details</title>
 </head>
 <body>
     <header>
-        <h1>Workouts</h1>
+        <h1><%= workout.name%></h1>
         <nav>
             <ul>
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/workouts/new">Add New Workout</a>
+                    <a href="/workouts">Back to Workout Index</a>
                 </li>
             </ul>
         </nav>
     </header>   
 
     <main>
-        <h2>List of Workouts</h2>
+        <h2>Workout Details</h2>
         <ul>
-            <% workouts.forEach(workout => { %>
                 
                 <li>
                     <a href="/workouts/<%= workout._id %>"><%=workout.name%></a>
                 </li>
-            <% }); %>
-            
         </ul>
     </main> 
 </body>
