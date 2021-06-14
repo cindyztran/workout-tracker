@@ -50,8 +50,8 @@ app.get('/', (req, res) => {
 //bodyparser middleware
 app.use(express.urlencoded({ extended: false }));
 
-//mount /exercisesplit
-app.use('/exercisesplit', require('./controllers/exercisesplit'));
+//mount /workout
+app.use('/workout', require('./controllers/workout'));
 
 //Tell Express to listen
 app.listen(PORT, () => {
