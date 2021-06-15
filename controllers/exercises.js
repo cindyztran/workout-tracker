@@ -20,7 +20,11 @@ router.get('/new', (req, res) => {
 });
 
 //Delete
-
+router.delete('/:id', (req, res) => {
+    Exercise.findByIdAndDelete(req.params.id, (err, exercise) => {
+        res.redirect('/exercises');
+    });
+});
 
 //Update
 
