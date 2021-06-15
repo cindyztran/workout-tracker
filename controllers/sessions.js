@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 
 //New (Login Page)
-sessionsRouter.get('/', (req, res) => {
-    res.send('login page')
+sessionsRouter.get('/new', (req, res) => {
+    res.render('sessions/new')
 });
 
 
@@ -15,7 +15,6 @@ sessionsRouter.delete('/', (req, res) => {
         res.redirect('/');
     });
 });
-
 
 //Create (Login Route)
 sessionsRouter.post('/', (req, res) => {
