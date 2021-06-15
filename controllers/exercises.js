@@ -5,6 +5,7 @@ const Workout = require('../models/workout');
 
 //Define routes/controllers
 
+//Mount controller on /exercises
 
 //Index
 router.get('/', (req, res) => {
@@ -17,9 +18,9 @@ router.get('/', (req, res) => {
 
 //New
 router.get('/new', (req, res) => {
-    Exercise.find({}, (err, exercises) => {
+    Workout.find({}, (err, workouts) => {
         res.render('exercises/new', {
-            exercises
+            workouts
         });
     });
 });

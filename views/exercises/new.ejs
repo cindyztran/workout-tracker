@@ -22,6 +22,17 @@
     </header>
     <main>
         <form action="/exercises" method="post">
+            <label for="createdFor">Workout:</label>
+            <select name="createdFor" id="createdFor">
+                <% workouts.forEach(workout => { %>
+                    <option value="<%=workout._id%>"><%=workout.name%></option>
+                    
+                <% }); %>
+
+
+
+
+            </select><br />
             <label for="name">Name:</label>
             <input type="text" name="name" id="name"/><br />
             <label for="sets">Sets:</label>

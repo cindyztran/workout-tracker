@@ -22,14 +22,18 @@
     </header>   
 
     <main>
-        <section>
 
+
+        <section>
             <h2>Workout Details</h2>
+
             <ul>
-                    
+                <% exercises.forEach(exercise => { %>
                     <li>
-                        <a href="/workouts/<%= workout._id %>"><%=workout.name%></a>
+                        <a href="/exercises/<%= exercise._id %>"><%=exercise.name%></a>
                     </li>
+                    
+                <% }); %>
             </ul>
         </section>
         <section>

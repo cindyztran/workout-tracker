@@ -22,6 +22,7 @@
     </header>
     <main>
         <section>
+            <h5>Workout: <%= exercise.createdFor.name%> on <%= new Date(exercise.createdAt).toLocaleDateString() %></h5>
             <label for="sets">Sets:</label>
             <%= exercise.sets%><br/>
             <label for="reps">Reps:</label>

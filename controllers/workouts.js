@@ -2,6 +2,8 @@
 const router = require('express').Router();
 
 const Workout = require('../models/workout');
+const Exercise = require('../models/exercise');
+
 //Define routes/controllers
 
 //Mount controller on /workout
@@ -60,8 +62,10 @@ router.get('/:id/edit', (req, res) => {
 //Show
 router.get('/:id', (req, res) => {
     Workout.findById(req.params.id, (err, workout) => {
-        res.render('workouts/show', 
-        {    workout });
+        Exercise.find({ createdFor: workout._id }, (err, exercises) => {
+            res.render('workouts/show', 
+            {   workout, exercises });
+        });
     });
 });
 
