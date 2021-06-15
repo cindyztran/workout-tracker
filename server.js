@@ -66,11 +66,6 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 });
 
-//Home Index
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
 //Mount Controller Middleware
 //mount /workout
 app.use('/workouts', require('./controllers/workouts'));
