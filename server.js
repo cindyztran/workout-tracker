@@ -5,6 +5,7 @@ require('dotenv').config();
 const express = require('express');
 const methodOverride = require('method-override');
 const logger = require('morgan');
+const session = require('express-session');
 
 //Port
 //allow use of Heroku's port or local port, depending on the environment
