@@ -20,5 +20,17 @@
             </ul>
         </nav>
     </header>
+    <main>
+        <h2>List of Exercises</h2>
+        <ul>
+            <% exercises.forEach(exercise => { %>
+                <li>
+                    <a href="/exercises/<%= exercise._id %>"><%= exercise.name %>
+                    </a>
+                </li>
+                
+            <% }); %>
+        </ul>
+    </main>
 </body>
 </html>
