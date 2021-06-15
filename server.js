@@ -37,15 +37,6 @@ db.on('disconnected', () => console.log('mongodb disconnected'));
 //Set default view engine
 app.set('view engine', 'ejs');
 
-//Home Route
-app.get('/', (req, res) => {
-    res.render('index.ejs')
-});
-
-//Home Index
-app.get('/', (req, res) => {
-    res.render('index');
-});
 
 //Mount Middleware
 
@@ -58,12 +49,29 @@ app.use(methodOverride('_method'));
 //server logger middleware
 app.use(logger('dev'));
 
+
+// Routes / Controllers
+
+//Home Route
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+});
+
+//Home Index
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
 //Mount Controller Middleware
 //mount /workout
 app.use('/workouts', require('./controllers/workouts'));
 
 //mount /exercises 
 app.use('/exercises', require('./controllers/exercises'));
+
+//mount /users
+const userController = require('./controllers/users');
+app.use('/users', userController);
 
 //Tell Express to listen
 app.listen(PORT, () => {
