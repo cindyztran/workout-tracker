@@ -7,10 +7,9 @@
     <title>Workout Tracker | Login</title>
 </head>
 <body>
-    <a href="/users/new">Register</a>
-    <a href="/sessions/new">Login</a>
+    <%- include('../partials/nav.ejs')  %>
     <h1>Login</h1>
-    <form action="/sessions" method="post">
+    <form action="/sessions" method="POST">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email"/>
 
