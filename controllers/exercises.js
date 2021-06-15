@@ -38,7 +38,13 @@ router.post('/', (req, res) => {
 });
 
 //Edit
-
+router.get('/:id/edit', (req, res) => {
+    Exercise.findById(req.params.id, (err, exercise) => {
+        res.render('exercises/edit', {
+            exercise
+        });
+    });
+});
 
 
 //Show
