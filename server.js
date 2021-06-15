@@ -63,7 +63,10 @@ app.use(
 
 //Home Route
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    res.render('index.ejs', {
+        //include current user data
+        currentUser: req.session.currentUser
+    });
 });
 
 //Mount Controller Middleware
