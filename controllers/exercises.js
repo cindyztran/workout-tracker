@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     Workout.find({}, (err, workouts) => {
         res.render('exercises/new', {
-            workouts
+            workouts, currentUser: req.session.currentUser
         });
     });
 });
@@ -64,7 +64,7 @@ router.get('/:id/edit', (req, res) => {
 router.get('/:id', (req, res) => {
     Exercise.findById(req.params.id).populate('createdFor').exec((err, exercise) => {
         console.log(exercise)
-        res.render('exercises/show', { exercise });
+        res.render('exercises/show', { exercise, currentUser: req.session.currentUser });
     });
 });
 

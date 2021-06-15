@@ -3,6 +3,7 @@ const router = require('express').Router();
 
 const Workout = require('../models/workout');
 const Exercise = require('../models/exercise');
+const User = require('../models/user')
 
 //Define routes/controllers
 
@@ -19,7 +20,8 @@ router.get('/', (req, res) => {
 
 //New
 router.get('/new', (req, res) => {
-    res.render('workouts/new');
+    res.render('workouts/new', 
+    { currentUser: req.session.currentUser});
 });
 
 //Delete
@@ -64,7 +66,7 @@ router.get('/:id', (req, res) => {
     Workout.findById(req.params.id, (err, workout) => {
         Exercise.find({ createdFor: workout._id }, (err, exercises) => {
             res.render('workouts/show', 
-            {   workout, exercises });
+            {   workout, exercises, currentUser: req.session.currentUser });
         });
     });
 });
