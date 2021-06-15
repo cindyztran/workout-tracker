@@ -9,7 +9,7 @@ const Workout = require('../models/workout');
 //Index
 router.get('/', (req, res) => {
     Workout.find({}, (err, foundWorkouts) => {
-        res.render('workout/index',
+        res.render('workouts/index',
         { workouts: foundWorkouts });    
     });
 
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 //New
 router.get('/new', (req, res) => {
-    res.render('workout/new');
+    res.render('workouts/new');
 });
 
 //Delete
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 //Edit
 router.get('/:id/edit', (req, res) => {
     Workout.findById(req.params.id, (err, workout) => {
-        res.render('workout/edit', {
+        res.render('workouts/edit', {
             workout
         });
     });
@@ -60,7 +60,7 @@ router.get('/:id/edit', (req, res) => {
 //Show
 router.get('/:id', (req, res) => {
     Workout.findById(req.params.id, (err, workout) => {
-        res.render('workout/show', 
+        res.render('workouts/show', 
         {    workout });
     });
 });
