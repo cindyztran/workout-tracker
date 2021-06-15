@@ -38,7 +38,11 @@ router.post('/', (req, res) => {
 
 
 //Show
-
+router.get('/:id', (req, res) => {
+    Exercise.findById(req.params.id, (err, exercise) => {
+        res.render('exercises/show', { exercise });
+    });
+});
 
 //Exports
 module.exports = router; 
