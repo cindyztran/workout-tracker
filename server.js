@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 });
 
-//Workout index
+//Home Index
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -58,8 +58,12 @@ app.use(methodOverride('_method'));
 //server logger middleware
 app.use(logger('dev'));
 
+//Mount Controller Middleware
 //mount /workout
-app.use('/workouts', require('./controllers/workout'));
+app.use('/workouts', require('./controllers/workouts'));
+
+//mount /exercises 
+app.use('/exercises', require('./controllers/exercises'));
 
 //Tell Express to listen
 app.listen(PORT, () => {
