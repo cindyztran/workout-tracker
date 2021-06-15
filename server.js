@@ -9,7 +9,7 @@ const session = require('express-session');
 
 //Port
 //allow use of Heroku's port or local port, depending on the environment
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 //Initialize Express
 const app = express();
@@ -50,6 +50,14 @@ app.use(methodOverride('_method'));
 //server logger middleware
 app.use(logger('dev'));
 
+//Configure express sessions
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false
+    })
+);
 
 // Routes / Controllers
 
@@ -71,8 +79,10 @@ app.use('/workouts', require('./controllers/workouts'));
 app.use('/exercises', require('./controllers/exercises'));
 
 //mount /users
-const userController = require('./controllers/users');
-app.use('/users', userController);
+app.use('/users', require('./controllers/users'));
+
+//mount /sessions
+app.use('/sessions', require('./controllers/sessions'));
 
 //Tell Express to listen
 app.listen(PORT, () => {
