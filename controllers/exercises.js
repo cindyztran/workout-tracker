@@ -27,7 +27,14 @@ router.delete('/:id', (req, res) => {
 });
 
 //Update
-
+router.put('/:id', (req, res) => {
+    Exercise.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true}, (err, updatedExercise) => {
+            res.redirect(`/exercises/${req.params.id}`);
+    });
+});
 
 
 //Create
