@@ -7,7 +7,7 @@ const User = require('../models/user.js');
 sessionsRouter.get('/new', (req, res) => {
     res.render('sessions/new', {
         //include current User Data
-        currentUser : req.sessions.currentUser
+        currentUser: req.session.currentUser
     });
 });
 
