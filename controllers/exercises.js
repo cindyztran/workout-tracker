@@ -1,6 +1,7 @@
 //Dependencies
 const router = require('express').Router();
 const Exercise = require('../models/exercise');
+const Workout = require('../models/workout');
 
 //Define routes/controllers
 
@@ -16,7 +17,11 @@ router.get('/', (req, res) => {
 
 //New
 router.get('/new', (req, res) => {
-    res.render('exercises/new');
+    Exercise.find({}, (err, exercises) => {
+        res.render('exercises/new', {
+            exercises
+        });
+    });
 });
 
 //Delete
@@ -56,7 +61,8 @@ router.get('/:id/edit', (req, res) => {
 
 //Show
 router.get('/:id', (req, res) => {
-    Exercise.findById(req.params.id, (err, exercise) => {
+    Exercise.findById(req.params.id).populate('createdFor').exec((err, exercise) => {
+        console.log(exercise)
         res.render('exercises/show', { exercise });
     });
 });
