@@ -29,8 +29,11 @@
 
             <ul>
                 <% exercises.forEach(exercise => { %>
+                    <h3> <a href="/exercises/<%=exercise._id%>"><%=exercise.name%></a></h3>
                     <li>
-                        <a href="/exercises/<%= exercise._id %>"><%=exercise.name%></a>
+                        Sets: <%= exercise.sets %>,
+                        Reps: <%= exercise.reps %>,
+                        Weight: <%= exercise.weight %> lbs
                     </li>
                     
                 <% }); %>
@@ -45,7 +48,7 @@
                 </form>
 
             <% } else { %>
-                <p>Sorry you don't have access to these actions. Please log in to continue.</p>
+                <p>Sorry, you don't have access to these actions. Please log in to continue.</p>
             <% } %>
         </section>
     </main> 

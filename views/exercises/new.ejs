@@ -25,7 +25,7 @@
             <label for="createdFor">Workout:</label>
             <select name="createdFor" id="createdFor">
                 <% workouts.forEach(workout => { %>
-                    <option value="<%=workout._id%>"><%=workout.name%></option>
+                    <option value="<%=workout._id%>"><%=workout.name%> <%=new Date(workout.createdAt).toLocaleDateString() %></option>
                     
                 <% }); %>
 

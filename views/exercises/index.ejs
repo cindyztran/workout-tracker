@@ -25,8 +25,7 @@
         <ul>
             <% exercises.forEach(exercise => { %>
                 <li>
-                    <a href="/exercises/<%= exercise._id %>"><%= exercise.name %>
-                    </a>
+                    <a href="/exercises/<%= exercise._id %>"><%= exercise.name%></a> on <%= new Date(exercise.createdAt).toLocaleDateString()%>
                 </li>
                 
             <% }); %>
