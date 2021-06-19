@@ -52,9 +52,12 @@ router.post('/', (req, res) => {
 
 //Edit
 router.get('/:id/edit', (req, res) => {
-    Exercise.findById(req.params.id, (err, exercise) => {
-        res.render('exercises/edit', {
-            exercise
+    Workout.find({}, (err, workouts) => {
+        Exercise.findById(req.params.id, (err, exercise) => {
+            res.render('exercises/edit', {
+                exercise, workouts
+            });
+
         });
     });
 });
