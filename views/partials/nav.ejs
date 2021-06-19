@@ -1,12 +1,14 @@
+
 <nav>
     <% if(currentUser) { %>
-        <a href="/">Home</a>
-        <form action="/sessions?_method=DELETE" method="post">
-        <input type="submit" value="Log Out"/>
+
+        <a class="nav" href="/">Home</a>
+        <form action="/sessions?_method=DELETE" method="post" style="float:right; margin-left: 1em;">
+        <input class="log-out" type="submit" value="Log Out"/>
     </form>
     <% } else { %>
-    <a href="/">Home</a>
-    <a href="/users/new">Register</a>
-    <a href="/sessions/new">Login</a>
+    <a class="nav" href="/">Home</a>
+    <a class="nav" href="/users/new">Register</a>
+    <a class="nav" href="/sessions/new">Login</a>
     <% } %>
 </nav>

@@ -4,32 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <title>Workout Tracker | Exercises</title>
 </head>
 <body>
-    <header>
-        <h1>Exercises</h1>
+    <div class="top-nav">
         <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/exercises/new">Create New Exercise</a>
-                </li>
-            </ul>
+            <a href="/">Home</a>
         </nav>
-    </header>
+    </div>
+    <h1>Exercises</h1>
     <main>
         <h2>List of Exercises</h2>
-        <ul>
-            <% exercises.forEach(exercise => { %>
-                <li>
-                    <a href="/exercises/<%= exercise._id %>"><%= exercise.name%></a> on <%= new Date(exercise.createdAt).toLocaleDateString()%>
-                </li>
-                
-            <% }); %>
-        </ul>
+        <a href="/exercises/new">
+        <button class="button">Create Exercise</button></a>
+        <div class="exercise-container">
+            <ul>
+                <% exercises.forEach(exercise => { %>
+                    <li>
+                        <a href="/exercises/<%= exercise._id %>"><%= exercise.name%></a> on <%= new Date(exercise.createdAt).toLocaleDateString()%>
+                    </li>
+                    
+                <% }); %>
+            </ul>
+
+
+        </div>
     </main>
 </body>
 </html>

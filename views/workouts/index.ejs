@@ -4,34 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <title>Workout Tracker | Workouts Index</title>
 </head>
 <body>
-    <header>
-        <h1>Workouts</h1>
+    <div class="top-nav">
         <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/workouts/new">Add New Workout</a>
-                </li>
-            </ul>
-        </nav>
-    </header>   
-
-    <main>
-        <h2>List of Workouts</h2>
-        <ul>
-            <% workouts.forEach(workout => { %>
-                
-                <li>
-                    <a href="/workouts/<%= workout._id %>"><%=workout.name%> on <%= new Date(workout.createdAt).toLocaleDateString() %></a>
-                </li>
-            <% }); %>
+            <a href="/">Home</a>
             
-        </ul>
+        </nav>
+    </div>   
+    
+    <h1>Workouts</h1>
+    <h2>List of Workouts</h2>
+    <a href="/workouts/new"><button class="workout-index-btn">Add New Workout</button></a>
+    <main>
+        <div class="workout-index-container">
+            <ul>
+                <% workouts.forEach(workout => { %>
+                    
+                    <li>
+                        <a href="/workouts/<%= workout._id %>"><%=workout.name%> on <%= new Date(workout.createdAt).toLocaleDateString() %></a>
+                    </li>
+                <% }); %>
+                
+            </ul>
+        </div>
     </main> 
 </body>
 </html>

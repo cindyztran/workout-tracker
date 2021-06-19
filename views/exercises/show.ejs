@@ -4,40 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <title>Workout Tracker | <%= exercise.name %></title>
 </head>
 <body>
-    <header>
-        <h1><%= exercise.name %></h1>
+    <div class="top-nav">
         <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/exercises">Exercises Index</a>
-                </li>
-            </ul>
+            <a href="/">Home</a>
+            <a href="/exercises">Back to Exercise Index</a>
         </nav>
-    </header>
+    </div>
+    <h1><%= exercise.name %></h1>
     <main>
-        <section>
-            <h5>Workout: <%= exercise.createdFor.name%> on <%= new Date(exercise.createdAt).toLocaleDateString() %></h5>
-            <label for="sets">Sets:</label>
-            <%= exercise.sets%><br/>
-            <label for="reps">Reps:</label>
-            <%= exercise.reps%><br/>
-            <label for="weight">Weight:</label>
-            <%= exercise.weight %> lbs<br/>
-            
-        </section>
+        <div class="exercise-container">
+
+            <section>
+                <h5>Workout: <%= exercise.createdFor.name%> on <%= new Date(exercise.createdAt).toLocaleDateString() %></h5>
+                <label for="sets">Sets:</label>
+                <%= exercise.sets%><br/>
+                <label for="reps">Reps:</label>
+                <%= exercise.reps%><br/>
+                <label for="weight">Weight:</label>
+                <%= exercise.weight %> lbs<br/>
+                
+            </section>
+        </div>
         <section>
             <h2>Actions</h2>
             <% if(currentUser) { %>
 
                 <a href="/exercises/<%= exercise._id %>/edit"><button class="button">Edit Exercise</button></a>
-                <form action="/exercises/<%= exercise._id%>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Exercise">
+                <form action="/exercises/<%= exercise._id%>?_method=DELETE" method="POST" style="padding-top: 10px;">
+                <input class="button" type="submit" value="Delete Exercise">
                 </form>
 
             <% } else { %>

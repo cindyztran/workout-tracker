@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
     <title>Workout Tracker | See Workout Details</title>
 </head>
 <body>
-    <header>
-        <h1><%= workout.name%></h1>
+    <div class="top-nav">
         <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/workouts">Back to Workout Index</a>
-                </li>
-            </ul>
+            <a href="/">Home</a>
+ 
+            <a href="/workouts">Workout Index</a>
+
         </nav>
-    </header>   
+    </div>   
+    <h1><%= workout.name%></h1>
 
     <main>
 
 
-        <section>
-            <h2>Workout Details</h2>
+        <h2>Workout Details</h2>
+        <section class="workout-show-container">
 
             <ul>
                 <% exercises.forEach(exercise => { %>
@@ -43,8 +43,8 @@
             <h2>Actions</h2>
             <% if(currentUser) { %>
                 <a href="/workouts/<%= workout._id %>/edit"><button class="button">Edit Workout</button></a>
-                <form action="/workouts/<%= workout._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Workout">
+                <form action="/workouts/<%= workout._id %>?_method=DELETE" method="POST" style="padding-top: 10px;">
+                <input class="button" type="submit" value="Delete Workout">
                 </form>
 
             <% } else { %>

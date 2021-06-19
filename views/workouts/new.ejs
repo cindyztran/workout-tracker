@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
     <title>Workout Tracker | Create New Workout</title>
 </head>
 <body>
-    <header>
+    <div class="top-nav">
         <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/workouts">Workouts Index</a>
-                </li>
-            </ul>
+            <a href="/">Home</a>
+
+            <a href="/workouts">Workouts Index</a>
         </nav>
-    </header>
+    </div>
     <main>
-        <form action="/workouts" method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name"/>
-            <input type="submit" value="Create Workout">
-        </form>
+        <h1>Create a New Workout</h1>
+        <div class="workout-create-container">
+
+            <form style="padding-top: 20px;" action="/workouts" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name"ß placeholder="i.e. Legs"/>
+                <input style="margin-top:10px;" class="create-button" type="submit" value="Create Workout">
+            </form>
+        </div>
+
     </main>
 </body>
 </html>
