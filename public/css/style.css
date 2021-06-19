@@ -91,9 +91,9 @@ li {
     padding-top: 10px;
 }
 
-li:hover {
+/* li:hover {
     background-color: #eceeef;
-}
+} */
 
 
 input, select {
@@ -152,7 +152,18 @@ a[href] {
 
 }
 
+.container {
+    align-items: center;
+}
+
 .workout-index-container, .workout-show-container, .workout-create-container, .workout-edit-container, .exercise-container, .container, p {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+.container input, .exercise-container input, select {
+    width: 100%;
+    clear: both;
+}
+
+
