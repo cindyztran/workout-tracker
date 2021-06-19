@@ -59,6 +59,8 @@ app.use(
     })
 );
 
+app.use(express.static('public'));
+
 // Routes / Controllers
 
 //Home Route
