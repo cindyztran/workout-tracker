@@ -26,7 +26,7 @@
                 <% workouts.forEach(workout => { %>
                     
                     <li>
-                        <a href="/workouts/<%= workout._id %>"><%=workout.name%> on <%= new Date(workout.createdAt).toLocaleDateString() %></a>
+                        <a style="color: #374047;" href="/workouts/<%= workout._id %>"><%=workout.name%> on <%= new Date(workout.createdAt).toLocaleDateString() %></a>
                     </li>
                 <% }); %>
                 

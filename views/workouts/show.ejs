@@ -31,7 +31,7 @@
 
             <ul>
                 <% exercises.forEach(exercise => { %>
-                    <h3> <a href="/exercises/<%=exercise._id%>"><%=exercise.name%></a></h3>
+                    <h3><a style="color: #374047;" href="/exercises/<%=exercise._id%>"><%=exercise.name%></a></h3>
                     <li>
                         Sets: <%= exercise.sets %>,
                         Reps: <%= exercise.reps %>,
