@@ -22,6 +22,7 @@ The idea behind the app was to ditch paper, and allow users to be able to create
 - Dotenv
 - [Icons8](https://icons8.com)
 - [Google Fonts](https://fonts.google.com)
+- [AWS](https://aws.amazon.com/)
 
 ## Screenshots
 
