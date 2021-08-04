@@ -45,8 +45,7 @@ The idea behind the app was to ditch paper, and allow users to be able to create
 
 
 ## Getting Started
-[Click here](https://czt-workout-tracker.herokuapp.com) to see the deployed app
-
+[Click here](http://workouttracker.online/) to see the deployed app
 
 ## Future Enhancements
 - implement search bar
